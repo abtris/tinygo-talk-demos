@@ -22,6 +22,15 @@ buttons:  ## Run 04-microbit-buttons example
 	@echo "Show how microbit buttons works"
 	tinygo build -target microbit -o=/Volumes/MICROBIT/flash.hex 04-microbit-buttons/main.go
 
+gpio:  ## Run 05-microbit-gpio example
+	@echo "Show how microbit gpio works"
+	tinygo build -target microbit -o=/Volumes/MICROBIT/flash.hex 05-microbit-gpio/main.go
+
+hex:  ## Run 05-microbit-gpio example with hex
+	@echo "Show how microbit gpio works using hex"
+	cp 05-microbit-gpio/example.hex /Volumes/MICROBIT/flash.hex
+
+
 clean: ## Clean after run compiles
 	rm 01-hello-world/golang-*
 	rm 01-hello-world/tinygo-*
@@ -33,4 +42,4 @@ help:  ## Display help
 #------------- <https://suva.sh/posts/well-documented-makefiles> --------------
 
 .DEFAULT_GOAL := help
-.PHONY: help clean size hello
+.PHONY: help clean size hello blink display gpio buttons hex
