@@ -10,6 +10,10 @@ size:  ## Compare size of binaries in 01-hello-world example
 	@echo "Hello World - compare sizes"
 	ls -l 01-hello-world/ | grep -v main.go
 
+blink: ## Run 02-hello-world-iot example
+	@echo "Show how microbit can blink"
+	tinygo build -target microbit -o=/Volumes/MICROBIT/flash.hex 02-hello-world-iot/main.go
+
 display: ## Run 03-microbit-display example
 	@echo "Show how microbit display works"
 	tinygo build -target microbit -o=/Volumes/MICROBIT/flash.hex 03-microbit-display/main.go
