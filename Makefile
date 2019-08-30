@@ -10,6 +10,10 @@ size:  ## Compare size of binaries in 01-hello-world example
 	@echo "Hello World - compare sizes"
 	ls -l 01-hello-world/ | grep -v main.go
 
+display: ## Run 03-microbit-display example
+	@echo "Show how microbit display works"
+	tinygo build -target microbit -o=/Volumes/MICROBIT/flash.hex 03-microbit-display/main.go
+
 clean: ## Clean after run compiles
 	rm 01-hello-world/golang-*
 	rm 01-hello-world/tinygo-*
